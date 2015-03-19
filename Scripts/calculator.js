@@ -67,14 +67,7 @@ function result()
         else
             return;
     }
-    if (i>=0)
-    {
-        if (Number(lastinput) == 0)
-        {
-            document.getElementById("lblmsg").innerHTML = "Cannot divide by zero";
-            return;
-        }
-    }
+
     var r = eval($("#result").val()).toString();
     if (r.length > 16)
     {
