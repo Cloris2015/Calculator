@@ -9,12 +9,6 @@ function reset() {
 };
 function Operator(s) {
     var v = $("#result").val();
-    if ("Infinity" == v) {
-        $("#result").val("0");
-        v = "0";
-    }
-    //var pattern = "[+\\-*/]+([0-9.]*)$";
-    //var str = "123+456+789.";
     var n = v.search(/[+\-*/]([0-9.]*)$/i);
     var lastpartstr=v.substring(++n, v.length);
     if (lastpartstr.indexOf(".") > 0 && s == ".")
@@ -32,8 +26,8 @@ function Operator(s) {
     }
     else //user inputs an operator or decimal point
     {
-        var operatorpattern = /[+\-*/]$/;
-        if (operatorpattern.test(v))
+        var op = /[+\-*/]$/;
+        if (op.test(v))
         {
             if (s == ".")
             {
@@ -62,17 +56,22 @@ function result()
 {
     var v = $("#result").val();
     var i = v.indexOf("/");
-    var lastinput = v.substring(v.length - 1, v.length);
-     if (!IsNum(lastinput))
+    var tail = v.substring(v.length - 1, v.length);
+    if (!IsNum(tail))
     {
-         if (lastinput.toString() == ".") {
-             lastinput = "0";
+        if (tail.toString() == ".") {
+            tail = "0";
         }
         else
             return;
     }
 
-    var r = eval($("#result").val()).toString();
+     var r = eval($("#result").val()).toString();
+     if (r == "Infinity")
+     {
+         $("#lblmsg").text("Cannot divide by zero");
+         return;
+     }
     if (r.length > 16)
     {
         if (parseInt(r) > 0)
