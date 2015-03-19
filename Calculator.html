@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+<link rel="stylesheet" type="text/css" href="CSS/Style.css" />
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/calculator.js" ></script>
+</head>
+
+<body>
+        <div class="calculator">
+            <Div id="lblmsg"></Div>
+             <div>
+             <input id="result" readonly="readonly">
+                <div class="buttons">
+                    <div class="operators">
+                        <a onclick='Operator("+")'>+</a>
+                        <a onclick='Operator("-")'>-</a>
+                        <a onclick='Operator("*")'>*</a>
+                        <a onclick='Operator("/")'>/</a>
+                    </div>
+                    <div class="numbers">
+                        <a onclick='Operator("1")'>1</a>
+                        <a onclick='Operator("2")'>2</a>
+                        <a onclick='Operator("3")'>3</a>
+                        <a onclick='Operator("4")'>4</a>
+                        <a onclick='Operator("5")'>5</a>
+                        <a onclick='Operator("6")'>6</a>
+                        <a onclick='Operator("7")'>7</a>
+                        <a onclick='Operator("8")'>8</a>
+                        <a onclick='Operator("9")'>9</a>
+                        <a onclick='Operator("0")'>0</a>
+                    </div>
+                    <a id="decimal" onclick='Operator(".")'>.</a>
+                    <a id="clear" onclick="reset();">C</a>
+                    <a id="equal" onclick="result();">=</a>
+
+                </div>
+            </div>
+    </div>
+</body>
+</html>
