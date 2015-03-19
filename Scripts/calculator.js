@@ -9,6 +9,10 @@ function reset() {
 };
 function Operator(s) {
     var v = $("#result").val();
+    if ("Infinity" == v) {
+        $("#result").val("0");
+        v = "0";
+    }
     //var pattern = "[+\\-*/]+([0-9.]*)$";
     //var str = "123+456+789.";
     var n = v.search(/[+\-*/]([0-9.]*)$/i);
